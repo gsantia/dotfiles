@@ -1,56 +1,5 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic
-"       http://amix.dk - amix@amix.dk
-"
-" Version: 
-"       6.0 - 01/04/17 14:24:34 
-"
-" Blog_post: 
-"       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
-" Syntax_highlighted:
-"       http://amix.dk/vim/vimrc.html
-"
-" Raw_version: 
-"       http://amix.dk/vim/vimrc.txt
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Spell checking
-"    -> Misc
-"    -> Helper functions
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sets how many lines of history VIM has to remember
-set history=500
-
 " Turn filetypes on"
 filetype plugin on
-
-" Set grep filename"
-set grepprg=grep\ -nH\ $*
 
 " Change tex filetype"
 let g:tex_flavor ='latex'
@@ -76,44 +25,20 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
-" Fast saving
-nmap <leader>w :w!<cr>
-
-" :W sudo saves the file 
-" (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
-" Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
-set langmenu=en
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
 " Turn on the WiLd menu
 set wildmenu
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
 
 "Always show current position
 set ruler
 
 " Height of the command bar
 set cmdheight=2
-
-" A buffer becomes hidden when it is abandoned
-set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -148,27 +73,19 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Properly disable sound on errors on MacVim
-if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
-endif
-
-
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" Put numbers on the left
 set relativenumber
 set number
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable 
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
 
 try
     colorscheme badwolf 
@@ -177,30 +94,12 @@ endtry
 
 set background=dark
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
 
 set cursorline
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
