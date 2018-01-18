@@ -17,10 +17,12 @@ alias ls='ls -ha'
 alias i='ipython2'
 alias l='ls -hl'
 alias v='vim'
+alias j='jupyter notebook'
 alias o='open'
 alias API='cd Projects/temp/TheFaceBot/code/API'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
+
 
 
 PATH="/usr/local/share/python/:$PATH"
