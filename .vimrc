@@ -1,9 +1,6 @@
 " Turn filetypes on"
 filetype plugin on
 
-" Change tex filetype"
-let g:tex_flavor ='latex'
-
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 
 " Enable filetype plugins
@@ -49,14 +46,12 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch 
 
-" Don't redraw while executing macros (good performance config)
-set lazyredraw 
-
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -66,11 +61,10 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Add a bit extra margin to the left
-set foldcolumn=1
-
-" Put numbers on the left
+" relative number rules!
 set relativenumber
+
+" put numbers on the left
 set number
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,7 +80,6 @@ catch
 endtry
 
 set background=dark
-
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -120,23 +113,6 @@ set wrap "Wrap lines
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
-
-
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -167,15 +143,6 @@ endif
 " Map ; to : to avoid pressing shift all the time
 nmap ; :
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
+"  Map F6 to spellcheck
+map <F6> :setlocal spell! spelllang=en_us,es<CR>
 
