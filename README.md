@@ -1,2 +1,1 @@
-# .config
-config files i use
+config files I use 
