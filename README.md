@@ -1,1 +1,1 @@
-config files I use 
+Configuration files that I used for Mac and Linux.
