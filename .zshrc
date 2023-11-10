@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/gio/.oh-my-zsh"
+export ZSH="$HOME/w.oh-my-zsh"
 
 # Theme 
 ZSH_THEME="risto"
@@ -9,7 +9,7 @@ HYPHEN_INSENSITIVE="true"
 
 
 # Plugins
-plugins=(git python web-search vi-mode)
+plugins=(git python web-search vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,6 +20,7 @@ alias i3rc="vim ~/.config/i3/config"
 alias vimrc="vim ~/.vimrc"
 alias v="vim"
 alias ls="ls -ha --color=auto"
+alias g="git"
 
 # Vim mode
 bindkey -v
